@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// Importing ListContacts component
+import ListContacts from './ListContacts';
 
 const contacts = [
   {
