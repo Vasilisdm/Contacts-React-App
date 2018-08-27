@@ -29,10 +29,10 @@ class App extends Component {
   // Declaring the removeContact method
   removeContact = (contact) => {
     // Passing in the current state of contacts
-    this.setState((state) => {
+    this.setState((state) => ({
       // Filtering contacts to remove the contact that was clicked
       contacts: state.contacts.filter((c) => c.id !== contact.id)
-    })
+    }))
   }
   render() {
     return (
