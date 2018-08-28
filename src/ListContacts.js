@@ -22,16 +22,19 @@ class ListContacts extends Component {
 
     render() {
 
+        const { contacts, onDeleteContact } = this.props
+        const { query } = this.state
+
         let showingContacts
 
         // If the user has typed something in the search input field
-        if (this.state.query) {
+        if (query) {
             // RegExp creates a regular expression object for matching text with a pattern
             // escapeRegExp escapes any special character which might be given within the search field, in order to be used from the RegExp
-            const match = new RegExp(escapeRegExp(this.state.query), 'i')
-            showingContacts = this.props.contacts.filter((contact) => match.test(contact.name))
+            const match = new RegExp(escapeRegExp(query), 'i')
+            showingContacts = contacts.filter((contact) => match.test(contact.name))
         } else {
-            showingContacts = this.props.contacts;
+            showingContacts = contacts;
         }
 
         // Sorting the filtered showingContacts array
@@ -64,7 +67,7 @@ class ListContacts extends Component {
                                 <p>{contact.email}</p>
                             </div>
         
-                            <button onClick={() => this.props.onDeleteContact(contact)} className='contact-remove'>
+                            <button onClick={() => onDeleteContact(contact)} className='contact-remove'>
                                 Remove
                             </button>
         
