@@ -20,6 +20,11 @@ class ListContacts extends Component {
         this.setState({ query: query.trim() })
     }
 
+    // Setting the query object to null in order the code in else statement to be processed
+    clearQuery = () => {
+        this.setState({ query: '' })
+    }
+
     render() {
 
         const { contacts, onDeleteContact } = this.props
@@ -47,6 +52,16 @@ class ListContacts extends Component {
                     <input className='search-contacts' type='text' placeholder='Search Contacts' value={this.state.query} onChange={ (event) => this.updateQuery(event.target.value) }>
                     </input>
                 </div>
+
+                {/* If the  */}
+                {showingContacts.length !== contacts.length && (
+                    <div className='showing-contacts'>
+                        <span>Showing {showingContacts.length} of {contacts.length} total.</span>
+                        {/* If show all button is clicked then the clearQuery function is invoked and the current state of the query sets to null */}
+                        <button onClick={this.clearQuery}>Show all</button>
+                    </div>
+                )}
+
                 <ol className='contact-list'>
                 {/* mapping over the contacts attribute in order to display the names in the list */}
                     {showingContacts.map(contact => (
