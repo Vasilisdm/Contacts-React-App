@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // If the only method that the component has is the render then I can write the class component as stateless functional component, which is basically a js function that accepts props as it's first argument
 function ListContacts (props) {
@@ -31,6 +32,12 @@ function ListContacts (props) {
             ))}
         </ol>
     )
+}
+
+// Adding propTypes property to ListContacts functional component
+ListContacts.propTypes = {
+    contacts: PropTypes.array.isRequired,
+    onDeleteContact: PropTypes.func.isRequired
 }
 
 // class ListContacts extends Component {
