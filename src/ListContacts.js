@@ -21,6 +21,19 @@ class ListContacts extends Component {
     }
 
     render() {
+
+        let showingContacts
+
+        // If the user has typed something in the search input field
+        if (this.state.query) {
+            // RegExp creates a regular expression object for matching text with a pattern
+            // escapeRegExp escapes any special character which might be given within the search field, in order to be used from the RegExp
+            const match = new RegExp(escapeRegExp(this.state.query), 'i')
+            showingContacts = this.props.contacts.filter((contact) => match.test(contact.name))
+        } else {
+            showingContacts = this.props.contacts;
+        }
+
         return (
             <div className='list-contacts'>
                 <div className='list-contacts-top'>
@@ -30,7 +43,7 @@ class ListContacts extends Component {
                 </div>
                 <ol className='contact-list'>
                 {/* mapping over the contacts attribute in order to display the names in the list */}
-                    {this.props.contacts.map(contact => (
+                    {showingContacts.map(contact => (
         
                         // Adding key attribute in order for react to know which li item has changed 
                         // rather than recreating the whole ol each time.
