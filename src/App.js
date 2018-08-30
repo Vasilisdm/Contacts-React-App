@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// Importing ListContacts component
+import { Route } from 'react-router-dom';
 import ListContacts from './ListContacts';
-// Importing everything from ContactsApi
 import * as ContactsApi from './utils/ContactsApi';
 import CreateContact from './createContact';
 
