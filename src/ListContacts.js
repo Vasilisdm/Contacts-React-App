@@ -27,7 +27,7 @@ class ListContacts extends Component {
 
     render() {
 
-        const { contacts, onDeleteContact } = this.props
+        const { contacts, onDeleteContact, onCreateContact } = this.props
         const { query } = this.state
 
         let showingContacts
@@ -50,6 +50,8 @@ class ListContacts extends Component {
                 <div className='list-contacts-top'>
                     {/* When the input is being changed then updateQuery gets invoked  */}
                     <input className='search-contacts' type='text' placeholder='Search Contacts' value={this.state.query} onChange={ (event) => this.updateQuery(event.target.value) } />
+                    {/* By clicking the create link, create value is being passed to creaContact method */}
+                    <a href='#create' className='add-contact' onClick={() => onCreateContact('create') }>Add contact</a>
                 </div>
 
                 {/* If the  */}
