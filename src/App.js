@@ -9,6 +9,14 @@ class App extends Component {
   state = {
      contacts: []
   }
+
+  // This method will get invoked immediately after the component is inserted in the dom
+  componentDidMount(){
+    ContactsApi.getAll().then((contacts) => {
+      this.setState({ contacts })
+    })
+  }
+
   // Declaring the removeContact method
   removeContact = (contact) => {
     // Passing in the current state of contacts
