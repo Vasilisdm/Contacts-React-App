@@ -8,7 +8,8 @@ import CreateContact from './createContact';
 
 class App extends Component {
   state = {
-     contacts: []
+    screen: 'list',
+    contacts: []
   }
 
   // This method will get invoked immediately after the component is inserted in the dom
@@ -33,8 +34,14 @@ class App extends Component {
     return (
       <div className="App">
       {/* rendering the ListContacts component */}
-        <ListContacts onDeleteContact={this.removeContact} contacts={this.state.contacts}/>
-        <CreateContact />
+        { this.state.screen === 'list' && (
+          <ListContacts onDeleteContact={this.removeContact} contacts={this.state.contacts}/>
+        )}
+
+        { this.state.screen === 'create' && (
+          <CreateContact />
+        )}
+        
       </div>
     );
   }
