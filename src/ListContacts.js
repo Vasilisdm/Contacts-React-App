@@ -49,8 +49,7 @@ class ListContacts extends Component {
             <div className='list-contacts'>
                 <div className='list-contacts-top'>
                     {/* When the input is being changed then updateQuery gets invoked  */}
-                    <input className='search-contacts' type='text' placeholder='Search Contacts' value={this.state.query} onChange={ (event) => this.updateQuery(event.target.value) }>
-                    </input>
+                    <input className='search-contacts' type='text' placeholder='Search Contacts' value={this.state.query} onChange={ (event) => this.updateQuery(event.target.value) } />
                 </div>
 
                 {/* If the  */}
