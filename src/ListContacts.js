@@ -52,7 +52,7 @@ class ListContacts extends Component {
                     {/* When the input is being changed then updateQuery gets invoked  */}
                     <input className='search-contacts' type='text' placeholder='Search Contacts' value={this.state.query} onChange={ (event) => this.updateQuery(event.target.value) } />
                     {/* By clicking the create link, create value is being passed to creaContact method */}
-                    <a href='#create' className='add-contact' onClick={() => onCreateContact('create') }>Add contact</a>
+                    <Link to='/create' className='add-contact' onClick={() => onCreateContact('create') }>Add contact</Link>
                 </div>
 
                 {/* If the  */}
