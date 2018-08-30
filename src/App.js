@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ListContacts from './ListContacts';
 // Importing everything from ContactsApi
 import * as ContactsApi from './utils/ContactsApi';
+import CreateContact from './createContact';
 
 
 class App extends Component {
