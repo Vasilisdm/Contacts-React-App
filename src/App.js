@@ -24,6 +24,9 @@ class App extends Component {
       // Filtering contacts to remove the contact that was clicked
       contacts: state.contacts.filter((c) => c.id !== contact.id)
     }))
+
+    // Removing the contact from the database
+    ContactsApi.remove(contact)
   }
   render() {
     return (
