@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // Importing ListContacts component
 import ListContacts from './ListContacts';
 // Importing everything from ContactsApi
-import * from './utils/ContactsApi';
+import * as ContactsApi from './utils/ContactsApi';
 
 
 class App extends Component {
