@@ -30,12 +30,18 @@ class App extends Component {
     // Removing the contact from the database
     ContactsApi.remove(contact)
   }
+
+  // createContact method declaration that updates the state of screen to what is provided
+  createContact = (screen) => {
+    this.setState({ screen })
+  }
+
   render() {
     return (
       <div className="App">
       {/* rendering the ListContacts component */}
         { this.state.screen === 'list' && (
-          <ListContacts onDeleteContact={this.removeContact} contacts={this.state.contacts}/>
+          <ListContacts contacts={this.state.contacts} onDeleteContact={this.removeContact} onCreateContact={this.createContact}/>
         )}
 
         { this.state.screen === 'create' && (
