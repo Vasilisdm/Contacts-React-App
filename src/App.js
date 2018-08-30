@@ -1,30 +1,13 @@
 import React, { Component } from 'react';
 // Importing ListContacts component
 import ListContacts from './ListContacts';
+// Importing everything from ContactsApi
+import * from './utils/ContactsApi';
 
 
 class App extends Component {
   state = {
-     contacts: [
-      {
-        "id": "ryan",
-        "name": "Ryan Florence",
-        "email": "ryan@reacttraining.com",
-        "avatarURL": "http://localhost:5001/ryan.jpg"
-      },
-      {
-        "id": "michael",
-        "name": "Michael Jackson",
-        "email": "michael@reacttraining.com",
-        "avatarURL": "http://localhost:5001/michael.jpg"
-      },
-      {
-        "id": "tyler",
-        "name": "Tyler McGinnis",
-        "email": "tyler@reacttraining.com",
-        "avatarURL": "http://localhost:5001/tyler.jpg"
-      }
-    ]
+     contacts: []
   }
   // Declaring the removeContact method
   removeContact = (contact) => {
