@@ -34,6 +34,7 @@ class App extends Component {
       <div className="App">
       {/* rendering the ListContacts component */}
         <ListContacts onDeleteContact={this.removeContact} contacts={this.state.contacts}/>
+        <CreateContact />
       </div>
     );
   }
